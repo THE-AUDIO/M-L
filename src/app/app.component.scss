@@ -13,7 +13,6 @@
     position: absolute;
     width: 100%;
     height: 50px;
-    background-color: var(--dark);
     border-radius: 25px;
     cursor: pointer;
   }
@@ -46,17 +45,14 @@
     border-radius: 50%;
     -webkit-box-shadow: inset 12px -4px 0px 0px var(--light);
     box-shadow: inset 12px -4px 0px 0px var(--light);
-    background-color: var(--dark);
     -webkit-transition: 0.3s;
     transition: 0.3s;
   }
   
   .checkbox:checked ~ .slider::before {
-    -webkit-transform: translateX(50px);
-    -ms-transform: translateX(50px);
-    transform: translateX(50px);
-    background-color: var(--dark);
     -webkit-box-shadow: none;
     box-shadow: none;
   }
-  
+  .text-mo{
+    font-size: clamp(1rem, 4vw, 3rem);
+  }

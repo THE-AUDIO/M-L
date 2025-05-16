@@ -1,23 +1,31 @@
 <div class="h-screen w-full dark:bg-secondary bg-accent  red-hat-display">
-  <nav class="h-[15vh] flex justify-between items-center fixed w-[95%] translate-x-[-50%] left-1/2">
+  <nav class="h-[12vh] flex justify-between items-center fixed w-[95%] translate-x-[-50%] left-1/2">
     <div class="menu h-16 w-1/4 flex justify-start items-center cursor-pointer">
       <div class="h-full w-20 flex justify-around items-center flex-col" [ngClass]="{'!justify-center': isHidden}"  (click)="toggleMenu()">
-        <span class="dark:bg-accent bg-secondary h-1 w-full transition-transform duration-300" [ngClass]="{'rotate-45':isHidden}"></span>
-        <span class="dark:bg-accent bg-secondary h-1 w-full transition-transform duration-300" [ngClass]="{'-rotate-45':isHidden}"></span>
+        <span class="dark:bg-accent bg-secondary h-1 w-full transition-transform duration-300 ease-linear" [ngClass]="{'rotate-45':isHidden}"></span>
+        <span class="dark:bg-accent bg-secondary h-1 w-full transition-transform duration-300 ease-linear" [ngClass]="{'-rotate-45':isHidden}"></span>
       </div>
-      <span class="uppercase ml-4 text-[3.5rem]  dark:text-accent text-secondary">Menu</span>
+      <span i18n class="uppercase ml-4 text-mo  dark:text-accent text-secondary">Menu</span>
     </div>
-    <div class="theme w-1/3 flex justify-end items-center">
-      <div class="toggle-switch">
-        <label class="switch-label border-[3px] border-secondary dark:border-accent ">
-          <input type="checkbox" class="checkbox inset-0">
-          <span (click)="toggleMode()" class="slider"></span>
-        </label>
-      </div>  
-      
+    <div class="theme w-1/6 flex justify-between items-center">
+     <div class="w-max h-[50px] flex justify-center items-center rounded-3xl uppercase">
+      <select  class="w-20 inset-0  rounded-3xl bg-accent px-2 py-0 border-[3px] border-secondary text-3xl h-full flex justify-center items-start">
+        <option value="en">🇬🇧</option>
+        <option value="fr">🇫🇷 </option>
+      </select>
+     </div>
+        <div class="toggle-switch">
+          <label class="switch-label border-[3px] border-secondary dark:border-accent dark:bg-accent bg-secondary">
+            <input type="checkbox" [checked]="{}"  class="checkbox inset-0">
+            <span (click)="toggleMode()" class="slider before:bg-secondary dark:bg-accent" [ngClass]="{'before:translate-x-[50px]':isDarkMode}"></span>
+          </label>
+      </div>
+    
+
     </div>
   </nav>
- <div class="anim w-full h-full flex justify-center items-center">
+ <div class="anim w-full h-full flex justify-center items-center flex-col">
   <h1 class="dark:text-accent text-[17rem] !font-[300] text-secondary">M&C</h1>
+  <p i18n class="text-xl dark:text-accent text-secondary">Bonjour mon fils</p>
  </div>
 </div>

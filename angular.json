@@ -5,6 +5,20 @@
   "projects": {
     "multi": {
       "projectType": "application",
+      "i18n": {
+      "sourceLocale": "fr",
+      "locales": {
+        "en-US": {
+          "translation": "src/locale/messages.en.xlf",
+          "subPath": "en"
+
+        },
+        "es-PR": {
+          "translation": "src/locale/messages.es.xlf",
+          "subPath": "es"
+
+        }
+        }},
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss",
@@ -39,11 +53,13 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "localize":true,
             "outputPath": "dist/multi",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
-              "zone.js"
+              "zone.js",
+              "@angular/localize/init"
             ],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
@@ -102,7 +118,8 @@
           "options": {
             "polyfills": [
               "zone.js",
-              "zone.js/testing"
+              "zone.js/testing",
+              "@angular/localize/init"
             ],
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
