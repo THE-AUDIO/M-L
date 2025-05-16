@@ -8,12 +8,13 @@
       <span i18n class="uppercase ml-4 text-mo  dark:text-accent text-secondary">Menu</span>
     </div>
     <div class="theme w-1/6 flex justify-between items-center">
-     <div class="w-max h-[50px] flex justify-center items-center rounded-3xl uppercase">
-      <select  class="w-20 inset-0  rounded-3xl bg-accent px-2 py-0 border-[3px] border-secondary text-3xl h-full flex justify-center items-start">
+     <form [formGroup]="languageForm" class="w-max h-[50px] flex justify-center items-center rounded-3xl uppercase">
+      <select formControlName="locale" class="w-20 inset-0  rounded-3xl bg-accent px-2 border-[3px] border-secondary text-3xl h-full flex justify-center items-start">
+        <option value="fr">🇫🇷</option>
         <option value="en">🇬🇧</option>
-        <option value="fr">🇫🇷 </option>
+        <option value="es">🇪🇸</option>
       </select>
-     </div>
+     </form>
         <div class="toggle-switch">
           <label class="switch-label border-[3px] border-secondary dark:border-accent dark:bg-accent bg-secondary">
             <input type="checkbox" [checked]="{}"  class="checkbox inset-0">
